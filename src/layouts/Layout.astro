@@ -6,18 +6,20 @@ import { SEO } from "astro-seo";
 import SpeedInsights from "@vercel/speed-insights/astro";
 import Analytics from "@vercel/analytics/astro";
 
-const originalWidth = bgImage.width;
-const originalHeight = bgImage.height;
 const {
   pageTitle = `${db.name} ${db.surname} | ${db.profession}`,
   pageDescription = `A professional portfolio showcasing the work of ${db.name} ${db.surname}, ${db.profession}. Explore modern, scalable web applications built with cutting-edge technologies including Next.js, React, TypeScript, and Spring Boot. Featured projects highlight expertise in full-stack development, secure authentication, SEO-optimized architectures, and high-performance UIs.`,
   ogTitle = `${db.name} ${db.surname} | ${db.profession}`,
-  ogType = "website",
-  ogImage = "/src/assets/og-image.png",
+  ogType = "article",
+  ogImage = "/og-image.png",
   canonicalURL = Astro.url.href,
 } = Astro.props;
 const absoluteOgImageUrl = new URL(ogImage, Astro.site || Astro.url).href;
 
+const originalWidth = bgImage.width;
+const originalHeight = bgImage.height;
+const sitePublishedDate = new Date().toISOString();
+const siteUpdatedDate = new Date().toISOString();
 const jsonLdData = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -59,22 +61,24 @@ const jsonLdData = {
     url: "https://egon.com",
   },
   description: pageDescription,
+  datePublished: sitePublishedDate,
+  dateModified: siteUpdatedDate,
 };
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
+    <title>{pageTitle}</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="canonical" href={canonicalURL} />
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <title>{pageTitle}</title>
     <meta name="description" content={pageDescription} />
     <meta
       name="google-site-verification"
       content="KhBaqrayQ5bmXK6Am3RNCKzGOgovRne1VZrQDGEV6VM"
     />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
 
     <SEO
       title={pageTitle}
@@ -98,6 +102,18 @@ const jsonLdData = {
           alt: `${ogTitle} - Social sharing image`,
           type: "image/png",
         },
+        article: {
+          publishedTime: sitePublishedDate,
+          modifiedTime: siteUpdatedDate,
+          section: db.profession,
+          authors: [
+            `${db.name} ${db.surname}`,
+            "https://linkedin.com/in/tedymoisa",
+            "https://github.com/tedymoisa",
+            "https://instagram.com/tedymoisa",
+          ],
+          tags: jsonLdData.knowsAbout,
+        },
       }}
       extend={{
         link: [
@@ -105,6 +121,12 @@ const jsonLdData = {
             rel: "icon",
             type: "image/svg+xml",
             href: "/paw-drawing-white.svg",
+          },
+        ],
+        meta: [
+          {
+            name: "author",
+            content: `${db.name} ${db.surname}`,
           },
         ],
       }}
@@ -119,6 +141,7 @@ const jsonLdData = {
   <body>
     <Analytics />
     <SpeedInsights />
+    <div>{absoluteOgImageUrl}</div>
     <Image
       src={bgImage}
       alt="Abstract black torn paper texture background"
