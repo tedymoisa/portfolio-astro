@@ -1,1 +1,51 @@
-<h2>Back</h2>
+---
+import { Image } from "astro:assets";
+import { db } from "../../lib/database";
+---
+
+<div class="container">
+  <div class="skills">
+    {
+      db.skills.map((skill, index) => (
+        <div class="skill">
+          <Image
+            src={skill.image}
+            alt={index.toString()}
+            width={20}
+            height={20}
+            loading="lazy"
+          />
+          <p>{skill.title}</p>
+        </div>
+      ))
+    }
+  </div>
+
+  <div></div>
+</div>
+
+<style>
+  p {
+    margin: 0;
+  }
+
+  .container {
+    margin: 1rem;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .skill {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+</style>

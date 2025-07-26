@@ -1,3 +1,5 @@
+import type { ImageMetadata } from "astro";
+
 export type Database = {
   name: string;
   surname: string;
@@ -7,25 +9,14 @@ export type Database = {
   website: string;
   resume: string;
   letter: string;
-  certifications: Certifications[];
-  contacts: Contacts[];
-  skills: string[];
+  certification: string;
+  skills: Skill[];
   projects: Project[];
 };
 
-export type Certifications = {
-  name: string;
-  description: string;
-  image: string;
-  issuer: string;
-  issueDate: Date;
-  expirationDate: Date;
-};
-
-export type Contacts = {
-  name: string;
-  image: string;
-  link: string;
+export type Skill = {
+  image: ImageMetadata;
+  title: string;
 };
 
 export type Project = {

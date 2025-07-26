@@ -1,4 +1,10 @@
 import type { Database } from "./types";
+import cog from "../assets/skills/cog.svg";
+import badgeCheck from "../assets/skills/badge-check.svg";
+import hammer from "../assets/skills/hammer.svg";
+import mousePointer from "../assets/skills/mouse-pointer.svg";
+import searchCode from "../assets/skills/search-code.svg";
+import shieldCheck from "../assets/skills/shield-check.svg";
 
 export const db: Database = {
   name: "Tedy Gabriel",
@@ -6,49 +12,38 @@ export const db: Database = {
   profession: "Full Stack Developer",
   phone: "+39 320 173 7624",
   email: "moisatedy@gmail.com",
-  website: "tedymoisa.it",
+  website: "tedymoisa.com",
   resume:
     "https://docs.google.com/document/d/16h9QZt9Lh4pg8Ad_hrZxI5k7i0NsqDVLKnNM1Q3ivTc/edit?usp=sharing",
   letter:
     "https://docs.google.com/document/d/14QTV-BGmIZJ_joJ6RoZv7kLPp_bdo208/edit?usp=sharing&ouid=109567365768629822365&rtpof=true&sd=true",
-  certifications: [
-    {
-      name: "AWS Certified Cloud Practitioner",
-      description: "AWS Certified Cloud Practitioner",
-      image:
-        "https://drive.google.com/uc?export=view&id=1um2zYrwgElEyEvgp3rcpytqmJWs16xBI",
-      issuer: "AWS",
-      issueDate: new Date("2024-10-19"),
-      expirationDate: new Date("2027-10-20"),
-    },
-  ],
-  contacts: [
-    {
-      name: "Linkedin",
-      image: "Linkedin",
-      link: "linkedin.com/in/tedymoisa",
-    },
-    {
-      name: "Instagram",
-      image: "Instagram",
-      link: "instagram.com/tedymoisa",
-    },
-    {
-      name: "Github",
-      image: "Github",
-      link: "github.com/tedymoisa",
-    },
-    {
-      name: "Project",
-      image: "FolderGit2",
-      link: "tedymoisa.it/projects",
-    },
-  ],
+  certification:
+    "https://drive.google.com/uc?export=view&id=1um2zYrwgElEyEvgp3rcpytqmJWs16xBI",
   skills: [
-    "Frontend with modern frameworks",
-    "Fast and scalable backends",
-    "DevOps with Docker and Kubernetes",
-    "Cloud Computing with AWS",
+    {
+      image: badgeCheck,
+      title: "Clean, performant code — no CMS dependencies",
+    },
+    {
+      image: cog,
+      title: "Designed for SEO, speed, and discoverability",
+    },
+    {
+      image: searchCode,
+      title: "Server-side rendering for fast, indexable pages",
+    },
+    {
+      image: shieldCheck,
+      title: "Security-first architecture by default",
+    },
+    {
+      image: mousePointer,
+      title: "Pixel-perfect UI with a focus on usability",
+    },
+    {
+      image: hammer,
+      title: "Tailored, future-proof web solutions",
+    },
   ],
   projects: [
     {
