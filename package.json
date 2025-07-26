@@ -33,6 +33,8 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.4.1",
+    "@vercel/analytics": "^1.5.0",
+    "@vercel/speed-insights": "^1.2.0",
     "astro": "^5.12.3",
     "astro-seo": "^0.8.4",
     "sharp": "^0.34.3"

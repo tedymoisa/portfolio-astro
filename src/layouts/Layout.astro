@@ -3,6 +3,8 @@ import bgImage from "../assets/layers-black-torn-paper.webp";
 import { Image } from "astro:assets";
 import { db } from "../lib/database";
 import { SEO } from "astro-seo";
+import SpeedInsights from "@vercel/speed-insights/astro";
+import Analytics from "@vercel/analytics/astro";
 
 const originalWidth = bgImage.width;
 const originalHeight = bgImage.height;
@@ -111,6 +113,8 @@ const jsonLdData = {
     />
   </head>
   <body>
+    <Analytics />
+    <SpeedInsights />
     <Image
       src={bgImage}
       alt="Abstract black torn paper texture background"
