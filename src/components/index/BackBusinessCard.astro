@@ -1,0 +1,76 @@
+---
+import { Image } from "astro:assets";
+import { db } from "../../lib/database";
+---
+
+<div class="container">
+  <div class="skills">
+    {
+      db.skills.map((skill, index) => (
+        <div class="skill">
+          <Image
+            src={skill.image}
+            alt={index.toString()}
+            width={20}
+            height={20}
+            loading="lazy"
+          />
+          <p>{skill.title}</p>
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  p {
+    margin: 0;
+  }
+
+  .container {
+    margin: 1rem;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .skill {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  @media (max-width: 480px) {
+    .container {
+      margin: 0;
+      padding: 0.5rem;
+    }
+
+    .skills {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: center;
+      gap: 0.4rem 0.75rem;
+    }
+
+    .skill {
+      width: calc(50% - 0.5rem);
+      gap: 0.4rem;
+      font-size: 0.75rem;
+    }
+
+    .skill :global(img) {
+      width: 14px;
+      height: 14px;
+    }
+  }
+</style>

@@ -1,9 +1,11 @@
 // @ts-check
 import { defineConfig } from "astro/config";
-
-import react from "@astrojs/react";
+import sitemap from "@astrojs/sitemap";
+import { db } from "./src/lib/database";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react()],
+  output: "static",
+  site: `https://${db.website}`,
+  integrations: [sitemap()],
 });
