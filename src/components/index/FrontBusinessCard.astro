@@ -13,7 +13,7 @@ import { db } from "../../lib/database";
   <div class="up-container">
     <div class="credentials">
       <h1>{`${db.name.toUpperCase()} ${db.surname.toUpperCase()}`}</h1>
-      <h3>{db.profession.toUpperCase()}</h3>
+      <h2>{db.profession.toUpperCase()}</h2>
     </div>
     <div class="logo-container">
       <Image src={logo} alt="logo" width={70} height={70} />
@@ -52,7 +52,7 @@ import { db } from "../../lib/database";
     margin: 0;
     font-size: 1.8rem;
   }
-  h3 {
+  h2 {
     margin: 0;
     font-weight: 400;
     font-size: 1.1rem;
@@ -151,7 +151,7 @@ import { db } from "../../lib/database";
     h1 {
       font-size: 1rem;
     }
-    h3 {
+    h2 {
       font-size: 0.65rem;
       font-weight: 300;
     }
