@@ -1,46 +1,50 @@
-# Astro Starter Kit: Basics
+# My Awesome Portfolio
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+Welcome to the official repository for my personal portfolio website. This project is a modern, interactive, and high-performance static page designed to showcase my skills and projects in a unique and engaging way.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+The centerpiece of the site is a digital business card that flips on user interaction, providing a memorable and professional introduction.
 
-## 🚀 Project Structure
+### [➡️ View the Live Site Here](https://tedymoisa.com)
 
-Inside of your Astro project, you'll see the following folders and files:
+---
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+## ✨ Visual Showcase
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+### Custom Logo
 
-## 🧞 Commands
+This is the brand identity used across the portfolio.
 
-All commands are run from the root of the project, from a terminal:
+![My Custom Logo](src/assets/paw-drawing-white.svg)
 
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `pnpm install`         | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+### Social Media & Sharing Preview (OG Image)
 
-## 👀 Want to learn more?
+When the portfolio link is shared on social media platforms, this is the beautiful preview that will be displayed.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+![Portfolio OG Image](src/assets/og-image.png)
+
+---
+
+## 🚀 Key Features
+
+- **Interactive Business Card:** A unique digital business card on the homepage that flips to reveal contact details and professional links.
+- **Blazing Fast Performance:** Built with Astro, the site leverages an island architecture to ship zero JavaScript by default, ensuring near-instant load times.
+- **Perfect Lighthouse Score:** The website achieves a **perfect score of 100** across all four Lighthouse categories:
+  - ✅ **Performance**
+  - ✅ **Accessibility**
+  - ✅ **Best Practices**
+  - ✅ **SEO**
+- **Fully SEO Optimized:** Meticulously configured to rank high on search engines and ensure maximum visibility.
+- **Type-Safe Codebase:** Developed with TypeScript to ensure the code is robust, maintainable, and free of common errors.
+- **Fully Responsive Design:** Provides a seamless and beautiful user experience across all devices, from desktops to mobile phones.
+
+## 🛠 Technology Stack
+
+This project was built using a modern and powerful tech stack:
+
+- **Framework:** [Astro](https://astro.build/)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Styling:** HTML5 & CSS3
+
+## 📄 License
+
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
