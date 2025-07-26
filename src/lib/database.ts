@@ -14,7 +14,7 @@ export const db: Database = {
   email: "moisatedy@gmail.com",
   website: "tedymoisa.com",
   resume:
-    "https://docs.google.com/document/d/16h9QZt9Lh4pg8Ad_hrZxI5k7i0NsqDVLKnNM1Q3ivTc/edit?usp=sharing",
+    "https://docs.google.com/document/d/12sNonUQmPdP3YmvmS-vBw72pzDVPkZnY2e4rOl3kHig/preview",
   letter:
     "https://docs.google.com/document/d/14QTV-BGmIZJ_joJ6RoZv7kLPp_bdo208/edit?usp=sharing&ouid=109567365768629822365&rtpof=true&sd=true",
   certification:
