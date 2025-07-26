@@ -1,7 +1,7 @@
 {
   "name": "portfolio-astro",
   "type": "module",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "My personal portfolio static page built with Astro and TypeScript, featuring an interactive flipping business card and perfect Lighthouse scores.",
   "author": {
     "name": "Tedy Gabriel Moisa",
@@ -33,6 +33,8 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.4.1",
+    "@vercel/analytics": "^1.5.0",
+    "@vercel/speed-insights": "^1.2.0",
     "astro": "^5.12.3",
     "astro-seo": "^0.8.4",
     "sharp": "^0.34.3"
