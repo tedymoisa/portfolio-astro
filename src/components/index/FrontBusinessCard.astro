@@ -15,7 +15,7 @@ import { db } from "../../lib/database";
       <h1>{`${db.name.toUpperCase()} ${db.surname.toUpperCase()}`}</h1>
       <h3>{db.profession.toUpperCase()}</h3>
     </div>
-    <div>
+    <div class="logo-container">
       <Image src={logo} alt="logo" width={70} height={70} />
     </div>
   </div>
@@ -36,7 +36,7 @@ import { db } from "../../lib/database";
       </div>
     </div>
     <div class="footer-container">
-      <a href={db.resume} target="_blank">
+      <a href={db.resume} target="_blank" class="resume-link">
         <Image src={resume} alt="resume" width={100} height={50} />
       </a>
       <div class="aws">
@@ -50,74 +50,140 @@ import { db } from "../../lib/database";
 <style>
   h1 {
     margin: 0;
+    font-size: 1.8rem;
   }
-
   h3 {
     margin: 0;
     font-weight: 400;
+    font-size: 1.1rem;
   }
-
   p {
     margin: 0;
   }
-
   a {
     color: white;
     text-decoration: none;
   }
-
   a:hover {
     text-decoration: underline;
   }
-
   .container {
     margin: 1rem;
     display: flex;
     flex: 1;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
   }
-
   .up-container {
     display: flex;
     flex: 1;
     justify-content: space-between;
   }
-
   .credentials {
     padding-top: 4rem;
     padding-left: 1rem;
   }
-
   .down-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem;
   }
-
   .contacts-container {
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
   }
-
   .contacts {
     display: flex;
     gap: 0.5rem;
   }
-
   .footer-container {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 2rem;
   }
-
   .aws {
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size: small;
+  }
+
+  @media (max-width: 480px) {
+    .container {
+      margin: 0;
+      padding: 0.75rem;
+    }
+    .up-container,
+    .down-container {
+      position: static;
+    }
+
+    .credentials {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      padding: 0;
+    }
+    .logo-container {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+    }
+    .contacts-container {
+      position: absolute;
+      top: 5rem;
+      left: 1rem;
+      gap: 0.5rem;
+    }
+    .footer-container {
+      position: absolute;
+      bottom: 0.5rem;
+      right: 1rem;
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 1rem;
+    }
+    h3 {
+      font-size: 0.65rem;
+      font-weight: 300;
+    }
+    .logo-container,
+    .logo-container :global(img) {
+      width: 50px;
+      height: 50px;
+    }
+    .contacts {
+      gap: 0.75rem;
+      align-items: center;
+    }
+    .contacts :global(img) {
+      width: 16px;
+      height: 16px;
+    }
+    .contacts a {
+      font-size: 0.75rem;
+    }
+    .resume-link :global(img) {
+      width: 70px;
+      height: 35px;
+    }
+    .aws {
+      gap: 0.1rem;
+    }
+    .aws p {
+      font-size: 0.6rem;
+    }
+    .aws :global(img) {
+      width: 40px;
+      height: 25px;
+    }
   }
 </style>

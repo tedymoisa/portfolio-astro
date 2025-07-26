@@ -174,4 +174,11 @@ import Layout from "../layouts/Layout.astro";
       transform: rotateY(360deg);
     }
   }
+
+  @media (max-width: 640px) {
+    .card-container {
+      width: 90vw;
+      height: calc(90vw * 0.5833);
+    }
+  }
 </style>

@@ -20,8 +20,6 @@ import { db } from "../../lib/database";
       ))
     }
   </div>
-
-  <div></div>
 </div>
 
 <style>
@@ -34,6 +32,7 @@ import { db } from "../../lib/database";
     display: flex;
     flex: 1;
     justify-content: center;
+    align-items: center;
   }
 
   .skills {
@@ -47,5 +46,31 @@ import { db } from "../../lib/database";
     display: flex;
     gap: 1rem;
     align-items: center;
+  }
+
+  @media (max-width: 480px) {
+    .container {
+      margin: 0;
+      padding: 0.75rem;
+    }
+
+    .skills {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: center;
+      gap: 0.4rem 0.75rem;
+    }
+
+    .skill {
+      width: calc(50% - 0.5rem);
+      gap: 0.4rem;
+      font-size: 0.65rem;
+    }
+
+    .skill :global(img) {
+      width: 14px;
+      height: 14px;
+    }
   }
 </style>
