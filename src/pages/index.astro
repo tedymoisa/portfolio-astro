@@ -1,4 +1,6 @@
 ---
+import BackBusinessCard from "../components/index/BackBusinessCard.astro";
+import FrontBusinessCard from "../components/index/FrontBusinessCard.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -15,11 +17,11 @@ import Layout from "../layouts/Layout.astro";
       <label for="input-checkbox-card" class="label-card">
         <div class="card">
           <div class="card-empty card-front">
-            <h2>Front</h2>
+            <FrontBusinessCard />
           </div>
 
           <div class="card-empty card-back">
-            <h2>Back</h2>
+            <BackBusinessCard />
           </div>
         </div>
       </label>
@@ -51,8 +53,8 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .card-container {
-    width: 500px;
-    height: 300px;
+    width: 600px;
+    height: 350px;
     perspective: 1000px;
     position: relative;
   }
@@ -110,8 +112,7 @@ import Layout from "../layouts/Layout.astro";
     height: 100%;
     backface-visibility: hidden;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex: 1;
     border-radius: 5px;
     color: #f0f0f0;
     text-shadow:
