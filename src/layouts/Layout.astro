@@ -104,7 +104,11 @@ const jsonLdData = {
       }}
     />
 
-    <script type="application/ld+json" set:html={JSON.stringify(jsonLdData)} />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(jsonLdData)}
+      is:inline
+    />
   </head>
   <body>
     <Image
