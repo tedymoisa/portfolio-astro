@@ -103,17 +103,5 @@ export const db: Database = {
       host: "https://shadstack-table.vercel.app",
       github: "github.com/tedymoisa/shadstack-table",
     },
-    {
-      name: "Portfolio",
-      description:
-        "A modern and responsive personal portfolio website designed and developed using Next.js and React. The platform showcases my professional journey, selected projects, and technical skills through a clean, performant, and user-friendly interface. Features include dynamic routing, SEO optimization, and a fully responsive design to provide an optimal experience across devices.",
-      images: [
-        "https://drive.google.com/uc?export=view&id=15F5vC0FVrJHXdu9yTIvz31IJlIT5nMwl",
-        "https://drive.google.com/uc?export=view&id=1CBlsH2EHRWADwkUs01R7lJ5FjhDIRmRN",
-      ],
-      stack: ["Next.js", "React", "Typescript", "Tailwind CSS", "Shadcn"],
-      host: "https://tedymoisa.it",
-      github: "github.com/tedymoisa/portfolio",
-    },
   ],
 };

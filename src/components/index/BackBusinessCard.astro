@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import { db } from "../../lib/database";
+import projects from "../../assets/projects.svg";
 ---
 
 <div class="container">
@@ -20,6 +21,10 @@ import { db } from "../../lib/database";
       ))
     }
   </div>
+
+  <a href="/projects" class="projects-link">
+    <Image src={projects} alt="projects" width={100} height={50} />
+  </a>
 </div>
 
 <style>
@@ -48,6 +53,12 @@ import { db } from "../../lib/database";
     align-items: center;
   }
 
+  .projects-link {
+    position: absolute;
+    bottom: 6px;
+    right: 16px;
+  }
+
   @media (max-width: 480px) {
     .container {
       margin: 0;
@@ -71,6 +82,12 @@ import { db } from "../../lib/database";
     .skill :global(img) {
       width: 14px;
       height: 14px;
+    }
+
+    .projects-link :global(img) {
+      vertical-align: middle;
+      width: 70px;
+      height: 35px;
     }
   }
 </style>

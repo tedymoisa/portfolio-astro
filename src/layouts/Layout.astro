@@ -150,7 +150,6 @@ const jsonLdData = {
   <body>
     <Analytics />
     <SpeedInsights />
-    <div>{absoluteOgImageUrl}</div>
     <Image
       src={bgImage}
       alt="Abstract black torn paper texture background"
@@ -167,14 +166,8 @@ const jsonLdData = {
 </html>
 
 <style is:global>
-  body {
-    margin: 0;
-    font-family: "Avenir Next", "Avenir", Helvetica, Arial, sans-serif;
-    height: 100dvh;
-    overflow: hidden;
-  }
-
   :root {
+    /* Your provided metallic theme colors */
     --primary: linear-gradient(145deg, #3a3a3a, #606060);
     --front-gloss: linear-gradient(
       90deg,
@@ -190,6 +183,97 @@ const jsonLdData = {
       rgba(255, 255, 255, 0.05) 4px
     );
     --text-primary: #f0f0f0;
+
+    /* Complementary metallic palette variables (no blue accent) */
+    --body-bg: #222222; /* A deeper, solid dark background for the page */
+    --secondary-text: #cccccc; /* Slightly dimmer white for less important text */
+    --border-glossy: rgba(
+      255,
+      255,
+      255,
+      0.15
+    ); /* For subtle metallic borders */
+    --tag-bg: #4a4a4a; /* Darker grey for tech tags */
+    --tag-border: #666666; /* Slightly lighter border for tech tags */
+    --shadow-dark: rgba(0, 0, 0, 0.6); /* Deeper, more prominent shadows */
+    --shadow-light: rgba(
+      255,
+      255,
+      255,
+      0.05
+    ); /* Subtle inner light for shine effects */
+  }
+
+  html {
+    font-family: "Avenir Next", "Avenir", Helvetica, Arial, sans-serif;
+    background-color: var(--body-bg);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+    color: var(--text-primary);
+    height: 100dvh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: 1em;
+    color: var(--secondary-text);
+  }
+
+  a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition:
+      color 0.3s ease,
+      text-shadow 0.3s ease;
+  }
+
+  a:hover {
+    color: var(--text-primary);
+    text-decoration: none;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  ul,
+  ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
   }
 
   .full-screen-background {

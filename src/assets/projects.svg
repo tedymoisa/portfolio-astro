@@ -4,16 +4,17 @@
   viewBox="0 0 50 15.63"
   xmlns="http://www.w3.org/2000/svg"
 >
-  <title>Resume Search Icon (Optimized for Small Size)</title>
+  <title>Projects Section Icon (Optimized for Small Size)</title>
 
   <g fill="none" stroke="white" stroke-width="0.32">
     <rect x="12.5" y="4.69" width="34.38" height="6.25" />
 
     <rect x="3.13" y="3.13" width="9.38" height="9.38" />
 
-    <g stroke-width="0.4">
-      <circle cx="7.5" cy="7.5" r="1.88" />
-      <line x1="8.91" y1="8.91" x2="10.16" y2="10.16" stroke-linecap="round" />
+    <g stroke-width="0.4" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Right Arrow Icon -->
+      <line x1="5" y1="7.5" x2="10" y2="7.5" />
+      <polyline points="8.5,6 10,7.5 8.5,9" />
     </g>
 
     <text
@@ -28,7 +29,7 @@
       text-anchor="middle"
       dominant-baseline="middle"
     >
-      RESUME
+      PROJECTS
     </text>
   </g>
 </svg>
