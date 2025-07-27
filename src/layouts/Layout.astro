@@ -173,7 +173,6 @@ const jsonLdData = {
 
 <style is:global>
   :root {
-    /* Your provided metallic theme colors */
     --primary: linear-gradient(145deg, #3a3a3a, #606060);
     --front-gloss: linear-gradient(
       90deg,
@@ -190,24 +189,13 @@ const jsonLdData = {
     );
     --text-primary: #f0f0f0;
 
-    /* Complementary metallic palette variables (no blue accent) */
-    --body-bg: #222222; /* A deeper, solid dark background for the page */
-    --secondary-text: #cccccc; /* Slightly dimmer white for less important text */
-    --border-glossy: rgba(
-      255,
-      255,
-      255,
-      0.15
-    ); /* For subtle metallic borders */
-    --tag-bg: #4a4a4a; /* Darker grey for tech tags */
-    --tag-border: #666666; /* Slightly lighter border for tech tags */
-    --shadow-dark: rgba(0, 0, 0, 0.6); /* Deeper, more prominent shadows */
-    --shadow-light: rgba(
-      255,
-      255,
-      255,
-      0.05
-    ); /* Subtle inner light for shine effects */
+    --body-bg: #222222;
+    --secondary-text: #cccccc;
+    --border-glossy: rgba(255, 255, 255, 0.15);
+    --tag-bg: #4a4a4a;
+    --tag-border: #666666;
+    --shadow-dark: rgba(0, 0, 0, 0.6);
+    --shadow-light: rgba(255, 255, 255, 0.05);
   }
 
   html {
@@ -238,8 +226,7 @@ const jsonLdData = {
   }
 
   p {
-    margin-top: 0;
-    margin-bottom: 1em;
+    margin: 0;
     color: var(--secondary-text);
   }
 
