@@ -157,12 +157,30 @@ const jsonLdData = {
   </body>
 </html>
 
-<style>
+<style is:global>
   body {
     margin: 0;
     font-family: "Avenir Next", "Avenir", Helvetica, Arial, sans-serif;
     height: 100dvh;
     overflow: hidden;
+  }
+
+  :root {
+    --primary: linear-gradient(145deg, #3a3a3a, #606060);
+    --front-gloss: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.35),
+      transparent
+    );
+    --back-gloss: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.05) 2px,
+      rgba(255, 255, 255, 0.05) 4px
+    );
+    --text-primary: #f0f0f0;
   }
 
   .full-screen-background {

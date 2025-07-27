@@ -86,7 +86,7 @@ import Layout from "../layouts/Layout.astro";
       0 15px 25px rgba(0, 0, 0, 0.7),
       0 5px 5px rgba(255, 255, 255, 0.1) inset;
     border: 2px solid #222;
-    background: linear-gradient(145deg, #3a3a3a, #606060);
+    background: var(--primary);
     position: relative;
   }
 
@@ -97,7 +97,7 @@ import Layout from "../layouts/Layout.astro";
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: linear-gradient(45deg, #888, #444, #888);
+    background: var(--primary);
     z-index: -1;
     border-radius: 5px;
   }
@@ -114,11 +114,11 @@ import Layout from "../layouts/Layout.astro";
     display: flex;
     flex: 1;
     border-radius: 5px;
-    color: #f0f0f0;
+    color: var(--text-primary);
     text-shadow:
       0 1px 2px rgba(0, 0, 0, 0.8),
       0 0 10px rgba(255, 255, 255, 0.2);
-    background: linear-gradient(145deg, #3a3a3a, #606060);
+    background: var(--primary);
     overflow: hidden;
   }
 
@@ -129,12 +129,7 @@ import Layout from "../layouts/Layout.astro";
     left: -150%;
     width: 80%;
     height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.35),
-      transparent
-    );
+    background: var(--front-gloss);
     transform: skewX(-30deg);
     transition: left 0.8s cubic-bezier(0.23, 1, 0.32, 1);
     z-index: 1;
@@ -155,13 +150,7 @@ import Layout from "../layouts/Layout.astro";
     left: 0;
     width: 100%;
     height: 100%;
-    background: repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 2px,
-      rgba(255, 255, 255, 0.05) 2px,
-      rgba(255, 255, 255, 0.05) 4px
-    );
+    background: var(--back-gloss);
     z-index: 2;
     pointer-events: none;
   }
