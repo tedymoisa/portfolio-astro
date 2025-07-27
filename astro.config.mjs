@@ -8,4 +8,7 @@ export default defineConfig({
   output: "static",
   site: `https://${db.website}`,
   integrations: [sitemap()],
+  image: {
+    domains: ["drive.google.com"],
+  },
 });

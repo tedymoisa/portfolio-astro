@@ -6,18 +6,29 @@ import { SEO } from "astro-seo";
 import SpeedInsights from "@vercel/speed-insights/astro";
 import Analytics from "@vercel/analytics/astro";
 
-const originalWidth = bgImage.width;
-const originalHeight = bgImage.height;
+interface Props {
+  pageTitle: string;
+  pageDescription: string;
+  ogTitle: string;
+  ogType?: string;
+  ogImage?: string;
+  canonicalURL?: string;
+}
+
 const {
-  pageTitle = `${db.name} ${db.surname} | ${db.profession}`,
-  pageDescription = `A professional portfolio showcasing the work of ${db.name} ${db.surname}, ${db.profession}. Explore modern, scalable web applications built with cutting-edge technologies including Next.js, React, TypeScript, and Spring Boot. Featured projects highlight expertise in full-stack development, secure authentication, SEO-optimized architectures, and high-performance UIs.`,
-  ogTitle = `${db.name} ${db.surname} | ${db.profession}`,
-  ogType = "website",
-  ogImage = "/src/assets/og-image.png",
+  pageTitle,
+  pageDescription,
+  ogTitle,
+  ogType = "article",
+  ogImage = "/og-image.png",
   canonicalURL = Astro.url.href,
 } = Astro.props;
 const absoluteOgImageUrl = new URL(ogImage, Astro.site || Astro.url).href;
 
+const originalWidth = bgImage.width;
+const originalHeight = bgImage.height;
+const sitePublishedDate = new Date().toISOString();
+const siteUpdatedDate = new Date().toISOString();
 const jsonLdData = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -59,21 +70,29 @@ const jsonLdData = {
     url: "https://egon.com",
   },
   description: pageDescription,
+  datePublished: sitePublishedDate,
+  dateModified: siteUpdatedDate,
 };
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
+    <title>{pageTitle}</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="canonical" href={canonicalURL} />
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <title>{pageTitle}</title>
     <meta name="description" content={pageDescription} />
     <meta
       name="google-site-verification"
       content="KhBaqrayQ5bmXK6Am3RNCKzGOgovRne1VZrQDGEV6VM"
+    />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title=`${db.name} ${db.surname}'s Projects RSS Feed`
+      href="/projects/feed.xml"
     />
 
     <SEO
@@ -98,6 +117,18 @@ const jsonLdData = {
           alt: `${ogTitle} - Social sharing image`,
           type: "image/png",
         },
+        article: {
+          publishedTime: sitePublishedDate,
+          modifiedTime: siteUpdatedDate,
+          section: db.profession,
+          authors: [
+            `${db.name} ${db.surname}`,
+            "https://linkedin.com/in/tedymoisa",
+            "https://github.com/tedymoisa",
+            "https://instagram.com/tedymoisa",
+          ],
+          tags: jsonLdData.knowsAbout,
+        },
       }}
       extend={{
         link: [
@@ -105,6 +136,12 @@ const jsonLdData = {
             rel: "icon",
             type: "image/svg+xml",
             href: "/paw-drawing-white.svg",
+          },
+        ],
+        meta: [
+          {
+            name: "author",
+            content: `${db.name} ${db.surname}`,
           },
         ],
       }}
@@ -134,12 +171,102 @@ const jsonLdData = {
   </body>
 </html>
 
-<style>
+<style is:global>
+  :root {
+    --primary: linear-gradient(145deg, #3a3a3a, #606060);
+    --front-gloss: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.35),
+      transparent
+    );
+    --back-gloss: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.05) 2px,
+      rgba(255, 255, 255, 0.05) 4px
+    );
+    --text-primary: #f0f0f0;
+
+    --body-bg: #222222;
+    --secondary-text: #cccccc;
+    --border-glossy: rgba(255, 255, 255, 0.15);
+    --tag-bg: #4a4a4a;
+    --tag-border: #666666;
+    --shadow-dark: rgba(0, 0, 0, 0.6);
+    --shadow-light: rgba(255, 255, 255, 0.05);
+  }
+
+  html {
+    font-family: "Avenir Next", "Avenir", Helvetica, Arial, sans-serif;
+    background-color: var(--body-bg);
+    scroll-behavior: smooth;
+  }
+
   body {
     margin: 0;
-    font-family: "Avenir Next", "Avenir", Helvetica, Arial, sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+    color: var(--text-primary);
     height: 100dvh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  p {
+    margin: 0;
+    color: var(--secondary-text);
+  }
+
+  a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition:
+      color 0.3s ease,
+      text-shadow 0.3s ease;
+  }
+
+  a:hover {
+    color: var(--text-primary);
+    text-decoration: none;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  ul,
+  ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
     overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
   }
 
   .full-screen-background {

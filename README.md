@@ -14,13 +14,13 @@ The centerpiece of the site is a digital business card that flips on user intera
 
 This is the brand identity used across the portfolio.
 
-![My Custom Logo](src/assets/paw-drawing-white.svg)
+![My Custom Logo](public/paw-drawing-white.svg)
 
 ### Social Media & Sharing Preview (OG Image)
 
 When the portfolio link is shared on social media platforms, this is the beautiful preview that will be displayed.
 
-![Portfolio OG Image](src/assets/og-image.png)
+![Portfolio OG Image](public/og-image.png)
 
 ---
 

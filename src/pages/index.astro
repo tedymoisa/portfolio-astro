@@ -2,9 +2,14 @@
 import BackBusinessCard from "../components/index/BackBusinessCard.astro";
 import FrontBusinessCard from "../components/index/FrontBusinessCard.astro";
 import Layout from "../layouts/Layout.astro";
+import { db } from "../lib/database";
+
+const title = `${db.name} ${db.surname} | ${db.profession}`;
+const description = `A professional portfolio showcasing the work of ${db.name} ${db.surname}, ${db.profession}. Explore modern, scalable web applications built with cutting-edge technologies including Next.js, React, TypeScript, and Spring Boot. Featured projects highlight expertise in full-stack development, secure authentication, SEO-optimized architectures, and high-performance UIs.`;
+const ogTitle = `${db.name} ${db.surname} | ${db.profession}`;
 ---
 
-<Layout>
+<Layout pageTitle={title} pageDescription={description} ogTitle={ogTitle}>
   <div class="container">
     <div class="card-container">
       <input
@@ -86,8 +91,9 @@ import Layout from "../layouts/Layout.astro";
       0 15px 25px rgba(0, 0, 0, 0.7),
       0 5px 5px rgba(255, 255, 255, 0.1) inset;
     border: 2px solid #222;
-    background: linear-gradient(145deg, #3a3a3a, #606060);
+    background: var(--primary);
     position: relative;
+    transform: translateZ(0.1px);
   }
 
   .card::before {
@@ -97,13 +103,14 @@ import Layout from "../layouts/Layout.astro";
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: linear-gradient(45deg, #888, #444, #888);
+    background: var(--primary);
     z-index: -1;
     border-radius: 5px;
   }
 
   .input-checkbox-card:checked + .label-card .card {
     transform: rotateY(180deg) scale(1.02);
+    transform: rotateY(180deg) scale(1.02) translateZ(0.1px);
   }
 
   .card-empty {
@@ -114,12 +121,13 @@ import Layout from "../layouts/Layout.astro";
     display: flex;
     flex: 1;
     border-radius: 5px;
-    color: #f0f0f0;
+    color: var(--text-primary);
     text-shadow:
       0 1px 2px rgba(0, 0, 0, 0.8),
       0 0 10px rgba(255, 255, 255, 0.2);
-    background: linear-gradient(145deg, #3a3a3a, #606060);
+    background: var(--primary);
     overflow: hidden;
+    transform: translateZ(0.1px);
   }
 
   .card-empty::before {
@@ -129,12 +137,7 @@ import Layout from "../layouts/Layout.astro";
     left: -150%;
     width: 80%;
     height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.35),
-      transparent
-    );
+    background: var(--front-gloss);
     transform: skewX(-30deg);
     transition: left 0.8s cubic-bezier(0.23, 1, 0.32, 1);
     z-index: 1;
@@ -155,15 +158,15 @@ import Layout from "../layouts/Layout.astro";
     left: 0;
     width: 100%;
     height: 100%;
-    background: repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 2px,
-      rgba(255, 255, 255, 0.05) 2px,
-      rgba(255, 255, 255, 0.05) 4px
-    );
+    background: var(--back-gloss);
     z-index: 2;
     pointer-events: none;
+    transition: opacity 0.3s ease;
+    opacity: 1;
+  }
+
+  .card-container:hover .card-empty::after {
+    opacity: 0.9;
   }
 
   @keyframes spin {
