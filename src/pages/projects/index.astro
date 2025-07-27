@@ -1,7 +1,7 @@
 ---
-import ProjectCard from "../components/projects/ProjectCard.astro";
-import Layout from "../layouts/Layout.astro";
-import { db } from "../lib/database";
+import ProjectCard from "../../components/projects/ProjectCard.astro";
+import Layout from "../../layouts/Layout.astro";
+import { db } from "../../lib/database";
 
 const title = `${db.name} ${db.surname} | Projects`;
 const description = `Explore a curated collection of modern, scalable web applications developed by ${db.name} ${db.surname}, a ${db.profession}. This section showcases projects meticulously built with cutting-edge technologies including Next.js, React, TypeScript, and Spring Boot, highlighting expertise in full-stack development, secure authentication, SEO-optimized architectures, and high-performance UIs.`;
@@ -10,7 +10,7 @@ const ogTitle = `${db.name} ${db.surname} | Projects`;
 
 <Layout pageTitle={title} pageDescription={description} ogTitle={ogTitle}>
   <main class="projects-page-container">
-    <h1 class="sr-only">`${db.name} ${db.surname} Projects`</h1>
+    <h1 class="sr-only">`${db.name} ${db.surname}'s' Projects`</h1>
     <p class="sr-only">
       Here's a collection of my recent projects, showcasing my skills in web
       development and software engineering. Explore them to see my work!

@@ -88,6 +88,12 @@ const jsonLdData = {
     />
     <link rel="canonical" href={canonicalURL} />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title=`${db.name} ${db.surname}'s Projects RSS Feed`
+      href="/projects/feed.xml"
+    />
 
     <SEO
       title={pageTitle}
