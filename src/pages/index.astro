@@ -2,9 +2,14 @@
 import BackBusinessCard from "../components/index/BackBusinessCard.astro";
 import FrontBusinessCard from "../components/index/FrontBusinessCard.astro";
 import Layout from "../layouts/Layout.astro";
+import { db } from "../lib/database";
+
+const title = `${db.name} ${db.surname} | ${db.profession}`;
+const description = `A professional portfolio showcasing the work of ${db.name} ${db.surname}, ${db.profession}. Explore modern, scalable web applications built with cutting-edge technologies including Next.js, React, TypeScript, and Spring Boot. Featured projects highlight expertise in full-stack development, secure authentication, SEO-optimized architectures, and high-performance UIs.`;
+const ogTitle = `${db.name} ${db.surname} | ${db.profession}`;
 ---
 
-<Layout>
+<Layout pageTitle={title} pageDescription={description} ogTitle={ogTitle}>
   <div class="container">
     <div class="card-container">
       <input

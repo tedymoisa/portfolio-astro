@@ -6,10 +6,19 @@ import { SEO } from "astro-seo";
 import SpeedInsights from "@vercel/speed-insights/astro";
 import Analytics from "@vercel/analytics/astro";
 
+interface Props {
+  pageTitle: string;
+  pageDescription: string;
+  ogTitle: string;
+  ogType?: string;
+  ogImage?: string;
+  canonicalURL?: string;
+}
+
 const {
-  pageTitle = `${db.name} ${db.surname} | ${db.profession}`,
-  pageDescription = `A professional portfolio showcasing the work of ${db.name} ${db.surname}, ${db.profession}. Explore modern, scalable web applications built with cutting-edge technologies including Next.js, React, TypeScript, and Spring Boot. Featured projects highlight expertise in full-stack development, secure authentication, SEO-optimized architectures, and high-performance UIs.`,
-  ogTitle = `${db.name} ${db.surname} | ${db.profession}`,
+  pageTitle,
+  pageDescription,
+  ogTitle,
   ogType = "article",
   ogImage = "/og-image.png",
   canonicalURL = Astro.url.href,

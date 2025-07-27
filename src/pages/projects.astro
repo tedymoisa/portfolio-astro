@@ -1,0 +1,12 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { db } from "../lib/database";
+
+const title = `${db.name} ${db.surname} | Projects`;
+const description = `Explore a curated collection of modern, scalable web applications developed by ${db.name} ${db.surname}, a ${db.profession}. This section showcases projects meticulously built with cutting-edge technologies including Next.js, React, TypeScript, and Spring Boot, highlighting expertise in full-stack development, secure authentication, SEO-optimized architectures, and high-performance UIs.`;
+const ogTitle = `${db.name} ${db.surname} | Projects`;
+---
+
+<Layout pageTitle={title} pageDescription={description} ogTitle={ogTitle}>
+  <h1>Projects</h1>
+</Layout>
