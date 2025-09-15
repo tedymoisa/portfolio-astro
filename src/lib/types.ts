@@ -7,6 +7,7 @@ export type Database = {
   phone: string;
   email: string;
   website: string;
+  fiscalCode: string;
   resume: string;
   letter: string;
   certification: string;

@@ -9,10 +9,11 @@ import shieldCheck from "../assets/skills/shield-check.svg";
 export const db: Database = {
   name: "Tedy Gabriel",
   surname: "Moisa",
-  profession: "Full Stack Developer",
+  profession: "Freelance Software Developer",
   phone: "+39 320 173 7624",
   email: "moisatedy@gmail.com",
   website: "tedymoisa.com",
+  fiscalCode: "05143480233",
   resume:
     "https://docs.google.com/document/d/12sNonUQmPdP3YmvmS-vBw72pzDVPkZnY2e4rOl3kHig/preview",
   letter:

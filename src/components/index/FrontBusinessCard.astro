@@ -6,6 +6,7 @@ import mail from "../../assets/mail.svg";
 import atSign from "../../assets/at-sign.svg";
 import awsLogo from "../../assets/aws-color.svg";
 import resume from "../../assets/resume.svg";
+import idCard from "../../assets/id-card.svg";
 import { db } from "../../lib/database";
 ---
 
@@ -33,6 +34,10 @@ import { db } from "../../lib/database";
       <div class="contacts">
         <Image src={atSign} alt="at-sign" width={20} height={20} />
         <a href={`https://${db.website}`} target="_blank">{db.website}</a>
+      </div>
+      <div class="contacts">
+        <Image src={idCard} alt="id-card" width={20} height={20} />
+        <p>{db.fiscalCode}</p>
       </div>
     </div>
     <div class="footer-container">
@@ -175,6 +180,10 @@ import { db } from "../../lib/database";
     }
 
     .contacts a {
+      font-size: 0.75rem;
+    }
+
+    .contacts p {
       font-size: 0.75rem;
     }
 
