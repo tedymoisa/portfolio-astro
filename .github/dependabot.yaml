@@ -3,19 +3,13 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "weekly"
-      day: "saturday"
-      time: "12:00"
-      timezone: "Etc/UTC"
+      interval: "monthly"
     open-pull-requests-limit: 10
-    reviewers:
-      - "tedymoisa"
     assignees:
       - "tedymoisa"
     labels:
       - "dependencies"
       - "dependabot"
-
     ignore:
       - dependency-name: "*"
         update-types: ["version-update:semver-major"]
@@ -23,7 +17,7 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
     labels:
       - "github_actions"
       - "dependabot"
