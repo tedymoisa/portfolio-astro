@@ -11,8 +11,8 @@ importers:
         specifier: ^4.0.12
         version: 4.0.12
       "@astrojs/sitemap":
-        specifier: ^3.5.1
-        version: 3.5.1
+        specifier: ^3.6.0
+        version: 3.6.0
       "@vercel/analytics":
         specifier: ^1.5.0
         version: 1.5.0
@@ -21,7 +21,7 @@ importers:
         version: 1.2.0
       astro:
         specifier: ^5.13.7
-        version: 5.13.7(@types/node@24.1.0)(rollup@4.45.1)(typescript@5.8.3)(yaml@2.8.0)
+        version: 5.13.7(@types/node@24.6.2)(rollup@4.45.1)(typescript@5.8.3)(yaml@2.8.0)
       astro-seo:
         specifier: ^0.8.4
         version: 0.8.4(prettier-plugin-astro@0.14.1)(prettier@3.6.2)(typescript@5.8.3)
@@ -92,10 +92,10 @@ packages:
         integrity: sha512-O5yyxHuDVb6DQ6VLOrbUVFSm+NpObulPxjs6XT9q3tC+RoKbN4HXMZLpv0LvXd1qdAjzVgJ1NFD+zKHJNDXikw==,
       }
 
-  "@astrojs/sitemap@3.5.1":
+  "@astrojs/sitemap@3.6.0":
     resolution:
       {
-        integrity: sha512-uX5z52GLtQTgOe8r3jeGmFRYrFe52mdpLYJzqjvL1cdy5Kg3MLOZEvaZ/OCH0fSq0t7e50uJQ6oBMZG0ffszBg==,
+        integrity: sha512-4aHkvcOZBWJigRmMIAJwRQXBS+ayoP5z40OklTXYXhUDhwusz+DyDl+nSshY6y9DvkVEavwNcFO8FD81iGhXjg==,
       }
 
   "@astrojs/telemetry@3.3.0":
@@ -923,10 +923,10 @@ packages:
         integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==,
       }
 
-  "@types/node@24.1.0":
+  "@types/node@24.6.2":
     resolution:
       {
-        integrity: sha512-ut5FthK5moxFKH2T1CUOC6ctR67rQRvvHdFLCD2Ql6KXmMuCrjsSsRI9UsLCm9M18BMwClv4pn327UvB7eeO1w==,
+        integrity: sha512-d2L25Y4j+W3ZlNAeMKcy7yDsK425ibcAOO2t7aPTz6gNMH0z2GThtwENCDc0d/Pw9wgyRqE5Px1wkV7naz8ang==,
       }
 
   "@types/sax@1.2.7":
@@ -2791,10 +2791,10 @@ packages:
         integrity: sha512-Ql87qFHB3s/De2ClA9e0gsnS6zXG27SkTiSJwjCc9MebbfapQfuPzumMIUMi38ezPZVNFcHI9sUIepeQfw8J8Q==,
       }
 
-  undici-types@7.8.0:
+  undici-types@7.13.0:
     resolution:
       {
-        integrity: sha512-9UJ2xGDvQ43tYyVMpuHlsgApydB8ZKfVYTsLDhXkFL/6gfkp+U8xTGdh8pMJv1SpZna0zxG1DwsKZsreLbXBxw==,
+        integrity: sha512-Ov2Rr9Sx+fRgagJ5AX0qvItZG/JKKoBRAVITs1zk7IqZGTJUwgUr7qoYBpWwakpWilTZFM98rG/AFRocu10iIQ==,
       }
 
   unicode-properties@1.4.1:
@@ -3404,7 +3404,7 @@ snapshots:
       fast-xml-parser: 5.2.5
       kleur: 4.1.5
 
-  "@astrojs/sitemap@3.5.1":
+  "@astrojs/sitemap@3.6.0":
     dependencies:
       sitemap: 8.0.0
       stream-replace-string: 2.0.0
@@ -3770,7 +3770,7 @@ snapshots:
 
   "@types/fontkit@2.0.8":
     dependencies:
-      "@types/node": 24.1.0
+      "@types/node": 24.6.2
 
   "@types/hast@3.0.4":
     dependencies:
@@ -3788,13 +3788,13 @@ snapshots:
 
   "@types/node@17.0.45": {}
 
-  "@types/node@24.1.0":
+  "@types/node@24.6.2":
     dependencies:
-      undici-types: 7.8.0
+      undici-types: 7.13.0
 
   "@types/sax@1.2.7":
     dependencies:
-      "@types/node": 24.1.0
+      "@types/node": 24.6.2
 
   "@types/unist@3.0.3": {}
 
@@ -3898,7 +3898,7 @@ snapshots:
       - prettier-plugin-astro
       - typescript
 
-  astro@5.13.7(@types/node@24.1.0)(rollup@4.45.1)(typescript@5.8.3)(yaml@2.8.0):
+  astro@5.13.7(@types/node@24.6.2)(rollup@4.45.1)(typescript@5.8.3)(yaml@2.8.0):
     dependencies:
       "@astrojs/compiler": 2.12.2
       "@astrojs/internal-helpers": 0.7.2
@@ -3954,8 +3954,8 @@ snapshots:
       unist-util-visit: 5.0.0
       unstorage: 1.17.1
       vfile: 6.0.3
-      vite: 6.3.6(@types/node@24.1.0)(yaml@2.8.0)
-      vitefu: 1.1.1(vite@6.3.6(@types/node@24.1.0)(yaml@2.8.0))
+      vite: 6.3.6(@types/node@24.6.2)(yaml@2.8.0)
+      vitefu: 1.1.1(vite@6.3.6(@types/node@24.6.2)(yaml@2.8.0))
       xxhash-wasm: 1.1.0
       yargs-parser: 21.1.1
       yocto-spinner: 0.2.3
@@ -5155,7 +5155,7 @@ snapshots:
 
   uncrypto@0.1.3: {}
 
-  undici-types@7.8.0: {}
+  undici-types@7.13.0: {}
 
   unicode-properties@1.4.1:
     dependencies:
@@ -5251,7 +5251,7 @@ snapshots:
       "@types/unist": 3.0.3
       vfile-message: 4.0.2
 
-  vite@6.3.6(@types/node@24.1.0)(yaml@2.8.0):
+  vite@6.3.6(@types/node@24.6.2)(yaml@2.8.0):
     dependencies:
       esbuild: 0.25.8
       fdir: 6.4.6(picomatch@4.0.3)
@@ -5260,13 +5260,13 @@ snapshots:
       rollup: 4.45.1
       tinyglobby: 0.2.14
     optionalDependencies:
-      "@types/node": 24.1.0
+      "@types/node": 24.6.2
       fsevents: 2.3.3
       yaml: 2.8.0
 
-  vitefu@1.1.1(vite@6.3.6(@types/node@24.1.0)(yaml@2.8.0)):
+  vitefu@1.1.1(vite@6.3.6(@types/node@24.6.2)(yaml@2.8.0)):
     optionalDependencies:
-      vite: 6.3.6(@types/node@24.1.0)(yaml@2.8.0)
+      vite: 6.3.6(@types/node@24.6.2)(yaml@2.8.0)
 
   volar-service-css@0.0.62(@volar/language-service@2.4.20):
     dependencies:
