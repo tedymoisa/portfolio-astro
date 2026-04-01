@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import type { Project } from "../../lib/types";
 
 interface Props {
@@ -15,13 +14,6 @@ const isSingleImage = project.images.length === 1;
 const imageContainerClass = isSingleImage
   ? "project-images single-image"
   : "project-images";
-
-const imageWidthHint = isSingleImage ? 1000 : 700;
-const imageHeightHint = isSingleImage ? 750 : 450;
-
-const imageSizes = isSingleImage
-  ? "(max-width: 768px) 100vw, 700px"
-  : "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw";
 ---
 
 <div class="project-card">
@@ -59,14 +51,11 @@ const imageSizes = isSingleImage
       {
         project.images.map((imgSrc, imgIndex) => (
           <div class="image-wrapper">
-            <Image
+            <img
               src={imgSrc}
               alt={`${project.name} screenshot ${imgIndex + 1}`}
-              width={imageWidthHint}
-              height={imageHeightHint}
               loading={loadingStrategy}
-              sizes={imageSizes}
-              quality={80}
+              referrerpolicy="no-referrer"
             />
           </div>
         ))
