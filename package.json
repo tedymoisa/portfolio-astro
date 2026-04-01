@@ -40,7 +40,7 @@
     "@vercel/speed-insights": "^1.2.0",
     "astro": "^5.15.0",
     "astro-seo": "^0.8.4",
-    "sharp": "^0.34.4"
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
     "prettier": "3.6.2",
