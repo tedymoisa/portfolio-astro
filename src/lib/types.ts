@@ -27,4 +27,5 @@ export type Project = {
   stack: string[];
   host: string;
   github: string;
+  publishedDate: Date;
 };

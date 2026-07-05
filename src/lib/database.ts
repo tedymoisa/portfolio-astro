@@ -66,6 +66,7 @@ export const db: Database = {
       ],
       host: "https://iconvect.com",
       github: "github.com/tedymoisa/iconvect",
+      publishedDate: new Date("2025-09-01"),
     },
     {
       name: "useReactHook",
@@ -79,6 +80,7 @@ export const db: Database = {
       stack: ["Next.js", "React", "Typescript", "Tailwind CSS", "Shadcn"],
       host: "https://usereacthook.com",
       github: "github.com/project-kt/usereacthook",
+      publishedDate: new Date("2025-06-01"),
     },
     {
       name: "React Auth",
@@ -92,6 +94,7 @@ export const db: Database = {
       stack: ["Java", "Spring Boot", "Spring Security"],
       host: "http://vps-3e827d29.vps.ovh.net:3031/",
       github: "github.com/tedymoisa/authentication-server",
+      publishedDate: new Date("2025-03-01"),
     },
     {
       name: "Shadstack Table",
@@ -103,6 +106,7 @@ export const db: Database = {
       stack: ["Next.js", "React", "Typescript", "Tailwind CSS", "Shadcn"],
       host: "https://shadstack-table.vercel.app",
       github: "github.com/tedymoisa/shadstack-table",
+      publishedDate: new Date("2025-01-01"),
     },
   ],
 };

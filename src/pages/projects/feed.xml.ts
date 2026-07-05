@@ -20,7 +20,7 @@ export async function GET(context: APIContext) {
       title: project.name,
       description: project.description,
       link: project.host,
-      pubDate: new Date(),
+      pubDate: project.publishedDate,
     })),
     stylesheet: "/rss/pretty-feed-v2.xsl",
   });
