@@ -1,89 +1,125 @@
 ---
-import { Image } from "astro:assets";
 import { db } from "../../lib/database";
-import projects from "../../assets/projects.svg";
 ---
 
 <div class="container">
-  <div class="skills">
-    {
-      db.skills.map((skill) => (
-        <div class="skill">
-          <Image
-            src={skill.image}
-            alt=""
-            width={20}
-            height={20}
-            loading="lazy"
-          />
-          <p>{skill.title}</p>
-        </div>
-      ))
-    }
+  <div>
+    <p class="eyebrow">Services</p>
+    <ul class="services">
+      {
+        db.services.map((service) => (
+          <li>
+            <span class="dash">—</span> {service}
+          </li>
+        ))
+      }
+    </ul>
   </div>
 
-  <a href="/projects" class="projects-link">
-    <Image src={projects} alt="View projects" width={100} height={50} />
-  </a>
+  <div class="divider"></div>
+
+  <div class="footer">
+    <div class="links">
+      <a href={db.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href={db.linkedin} target="_blank" rel="noopener noreferrer"
+        >LinkedIn</a
+      >
+    </div>
+
+    <a href={db.resume} target="_blank" rel="noopener noreferrer" class="cta"
+      >Résumé ↓</a
+    >
+  </div>
 </div>
 
 <style>
   .container {
-    margin: 1rem;
     display: flex;
     flex: 1;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--space-5);
   }
 
-  .skills {
+  .eyebrow {
+    margin: 0 0 var(--space-3);
+    font-family: var(--font-mono);
+    font-size: var(--text-2xs);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+
+  .services {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 0.5rem;
+    gap: var(--space-2);
   }
 
-  .skill {
+  .services li {
+    font-family: var(--font-serif);
+    font-size: var(--text-sm);
+    color: var(--color-text-primary);
+  }
+
+  .dash {
+    color: var(--color-text-muted);
+  }
+
+  .divider {
+    height: 2px;
+    flex-shrink: 0;
+    margin: var(--space-4) 0;
+    background: var(--gradient-divider);
+  }
+
+  .footer {
     display: flex;
-    gap: 1rem;
-    align-items: center;
+    flex-direction: column;
+    gap: var(--space-4);
   }
 
-  .projects-link {
-    position: absolute;
-    bottom: 6px;
-    right: 16px;
+  .links {
+    display: flex;
+    gap: var(--space-4);
+  }
+
+  .links a {
+    font-family: var(--font-mono);
+    font-size: var(--text-2xs);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    color: var(--color-text-secondary);
+  }
+
+  .links a:hover {
+    color: var(--color-text-primary);
+    text-shadow: none;
+  }
+
+  .cta {
+    align-self: flex-end;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+    color: var(--color-on-accent);
+    background: var(--color-accent-strong);
+    border-radius: var(--radius-sm);
+    padding: var(--space-1) var(--space-3);
+    white-space: nowrap;
+  }
+
+  .cta:hover {
+    background: var(--color-accent-bright);
+    color: var(--color-on-accent);
+    text-shadow: none;
   }
 
   @media (max-width: 480px) {
     .container {
-      margin: 0;
-      padding: 0.5rem;
-    }
-
-    .skills {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-content: center;
-      gap: 0.4rem 0.75rem;
-    }
-
-    .skill {
-      width: calc(50% - 0.5rem);
-      gap: 0.4rem;
-      font-size: 0.75rem;
-    }
-
-    .skill :global(img) {
-      width: 14px;
-      height: 14px;
-    }
-
-    .projects-link :global(img) {
-      vertical-align: middle;
-      width: 70px;
-      height: 35px;
+      padding: var(--space-4);
     }
   }
 </style>

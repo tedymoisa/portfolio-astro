@@ -1,0 +1,65 @@
+:root {
+  --color-bg: #0a0a0b;
+
+  --gradient-page: linear-gradient(155deg, #111113, #0a0a0b 60%);
+  --gradient-glow:
+    radial-gradient(
+      circle at 18% 12%,
+      rgba(255, 255, 255, 0.06),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 85% 92%,
+      rgba(255, 255, 255, 0.045),
+      transparent 45%
+    );
+  --glow-opacity: 0.55;
+
+  --gradient-card-front: linear-gradient(135deg, #2b2b2e, #1c1c1e 60%);
+  --gradient-card-back: linear-gradient(135deg, #242426, #19191b 60%);
+
+  --gradient-divider: linear-gradient(
+    90deg,
+    rgba(201, 168, 105, 0.5),
+    transparent
+  );
+
+  --color-text-primary: #f7f1e1;
+  --color-text-secondary: #c0b9ab;
+  --color-text-muted: #79746a;
+
+  --color-accent: #b39660;
+  --color-accent-strong: #caa96a;
+  --color-accent-bright: #dcbf85;
+  --color-on-accent: #131210;
+
+  --color-border: rgba(179, 150, 96, 0.32);
+
+  --shadow-card:
+    0 25px 50px -12px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+
+  --font-serif:
+    "Charter", "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+  --font-mono:
+    ui-monospace, "SF Mono", "JetBrains Mono", "Fira Code", Menlo, Consolas,
+    monospace;
+
+  --text-2xs: 0.65rem;
+  --text-xs: 0.75rem;
+  --text-sm: 0.85rem;
+  --text-lg: 1.2rem;
+  --text-xl: 1.5rem;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+
+  --radius-sm: 4px;
+  --radius-md: 10px;
+
+  --tracking-label: 0.12em;
+}

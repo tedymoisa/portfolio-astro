@@ -1,6 +1,5 @@
 ---
-import bgImage from "../assets/layers-black-torn-paper.webp";
-import { Image } from "astro:assets";
+import "../styles/theme.css";
 import { db } from "../lib/database";
 import { SEO } from "astro-seo";
 import SpeedInsights from "@vercel/speed-insights/astro";
@@ -25,8 +24,6 @@ const {
 } = Astro.props;
 const absoluteOgImageUrl = new URL(ogImage, Astro.site || Astro.url).href;
 
-const originalWidth = bgImage.width;
-const originalHeight = bgImage.height;
 const sitePublishedDate = "2025-07-25T00:00:00.000Z";
 const siteUpdatedDate = new Date().toISOString();
 const jsonLdData = {
@@ -38,11 +35,7 @@ const jsonLdData = {
   jobTitle: db.profession,
   url: canonicalURL,
   image: absoluteOgImageUrl,
-  sameAs: [
-    "https://linkedin.com/in/tedymoisa",
-    "https://github.com/tedymoisa",
-    "https://instagram.com/tedymoisa",
-  ],
+  sameAs: [db.linkedin, db.github, "https://instagram.com/tedymoisa"],
   alumniOf: {
     "@type": "EducationalOrganization",
     name: "Università degli Studi di Verona",
@@ -78,22 +71,13 @@ const jsonLdData = {
 <!doctype html>
 <html lang="en">
   <head>
-    <title>{pageTitle}</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={pageDescription} />
     <meta
       name="google-site-verification"
       content="KhBaqrayQ5bmXK6Am3RNCKzGOgovRne1VZrQDGEV6VM"
     />
-    <link rel="canonical" href={canonicalURL} />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <link
-      rel="alternate"
-      type="application/rss+xml"
-      title=`${db.name} ${db.surname}'s Projects RSS Feed`
-      href="/projects/feed.xml"
-    />
 
     <SEO
       title={pageTitle}
@@ -123,8 +107,8 @@ const jsonLdData = {
           section: db.profession,
           authors: [
             `${db.name} ${db.surname}`,
-            "https://linkedin.com/in/tedymoisa",
-            "https://github.com/tedymoisa",
+            db.linkedin,
+            db.github,
             "https://instagram.com/tedymoisa",
           ],
           tags: jsonLdData.knowsAbout,
@@ -135,13 +119,29 @@ const jsonLdData = {
           {
             rel: "icon",
             type: "image/svg+xml",
-            href: "/paw-drawing-white.svg",
+            href: "/favicon.svg",
           },
         ],
         meta: [
           {
             name: "author",
             content: `${db.name} ${db.surname}`,
+          },
+          {
+            name: "twitter:card",
+            content: "summary_large_image",
+          },
+          {
+            name: "twitter:title",
+            content: ogTitle,
+          },
+          {
+            name: "twitter:description",
+            content: pageDescription,
+          },
+          {
+            name: "twitter:image",
+            content: absoluteOgImageUrl,
           },
         ],
       }}
@@ -156,51 +156,15 @@ const jsonLdData = {
   <body>
     <Analytics />
     <SpeedInsights />
-    <Image
-      src={bgImage}
-      alt="Abstract black torn paper texture background"
-      loading="eager"
-      class="full-screen-background"
-      width={originalWidth}
-      height={originalHeight}
-      widths={[360, 720, 1024, 1280, 1536, 1920, 2560, 3840, originalWidth]}
-      sizes="100vw"
-      priority={true}
-    />
+    <p class="site-tag">{`Hey, I'm ${db.name.split(" ")[0]}`}</p>
     <slot />
   </body>
 </html>
 
 <style is:global>
-  :root {
-    --primary: linear-gradient(145deg, #3a3a3a, #606060);
-    --front-gloss: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.35),
-      transparent
-    );
-    --back-gloss: repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 2px,
-      rgba(255, 255, 255, 0.05) 2px,
-      rgba(255, 255, 255, 0.05) 4px
-    );
-    --text-primary: #f0f0f0;
-
-    --body-bg: #222222;
-    --secondary-text: #cccccc;
-    --border-glossy: rgba(255, 255, 255, 0.15);
-    --tag-bg: #4a4a4a;
-    --tag-border: #666666;
-    --shadow-dark: rgba(0, 0, 0, 0.6);
-    --shadow-light: rgba(255, 255, 255, 0.05);
-  }
-
   html {
-    font-family: "Avenir Next", "Avenir", Helvetica, Arial, sans-serif;
-    background-color: var(--body-bg);
+    font-family: var(--font-mono);
+    background-color: var(--color-bg);
     scroll-behavior: smooth;
   }
 
@@ -209,8 +173,29 @@ const jsonLdData = {
     padding: 0;
     box-sizing: border-box;
     line-height: 1.6;
-    color: var(--text-primary);
+    color: var(--color-text-primary);
     height: 100dvh;
+    background: var(--gradient-page);
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: var(--glow-opacity);
+    background: var(--gradient-glow);
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
   h1,
@@ -222,16 +207,16 @@ const jsonLdData = {
     margin-top: 0;
     margin-bottom: 0.5em;
     font-weight: 700;
-    color: var(--text-primary);
+    color: var(--color-text-primary);
   }
 
   p {
     margin: 0;
-    color: var(--secondary-text);
+    color: var(--color-text-secondary);
   }
 
   a {
-    color: var(--text-primary);
+    color: var(--color-text-primary);
     text-decoration: none;
     transition:
       color 0.3s ease,
@@ -239,7 +224,7 @@ const jsonLdData = {
   }
 
   a:hover {
-    color: var(--text-primary);
+    color: var(--color-text-primary);
     text-decoration: none;
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
   }
@@ -269,15 +254,29 @@ const jsonLdData = {
     border-width: 0;
   }
 
-  .full-screen-background {
+  .site-tag {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    z-index: 0;
-    background-color: #333;
+    top: var(--space-5);
+    left: clamp(var(--space-5), 23vw, 30rem);
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: var(--text-2xs);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    z-index: 10;
+  }
+
+  @media (max-width: 900px) {
+    .site-tag {
+      left: var(--space-5);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .site-tag {
+      top: var(--space-4);
+      left: var(--space-4);
+    }
   }
 </style>
