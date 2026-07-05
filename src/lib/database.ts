@@ -9,7 +9,7 @@ export const db: Database = {
   website: "tedymoisa.com",
   fiscalCode: "05143480233",
   resume:
-    "https://docs.google.com/document/d/12sNonUQmPdP3YmvmS-vBw72pzDVPkZnY2e4rOl3kHig/preview",
+    "https://docs.google.com/document/d/1G2Y5JwNPK6LX70v1GBQcdotleqsloK3lx1y9NU9mfIA/preview",
   certification:
     "https://drive.google.com/thumbnail?id=1um2zYrwgElEyEvgp3rcpytqmJWs16xBI&sz=w1000",
   github: "https://github.com/tedymoisa",

@@ -2,8 +2,6 @@
 import "../styles/theme.css";
 import { db } from "../lib/database";
 import { SEO } from "astro-seo";
-import SpeedInsights from "@vercel/speed-insights/astro";
-import Analytics from "@vercel/analytics/astro";
 
 interface Props {
   pageTitle: string;
@@ -154,8 +152,6 @@ const jsonLdData = {
     />
   </head>
   <body>
-    <Analytics />
-    <SpeedInsights />
     <p class="site-tag">{`Hey, I'm ${db.name.split(" ")[0]}`}</p>
     <slot />
   </body>
